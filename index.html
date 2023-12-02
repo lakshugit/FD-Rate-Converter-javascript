@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FD Rate Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <h2>FD Rate Converter</h2>
+        <div class="inputdiv">
+            <input type="text" id="input" placeholder="tenture months">
+        </div>
+        <div>
+            <button type="submit" onclick="fdConverter()">Calculate</button>
+        </div>
+        <div id="result">
+
+        </div>
+    </div>
+    <script>
+        
+function fdConverter(){
+   const months =Number(document.getElementById("input").value)
+   let rate = 0
+
+   if(months<3){
+    rate = 4.8
+   }
+   else if(months>=3 && months<=6){
+    rate = 5.8
+   }
+   else if(months>=7 && months<=9){
+    rate = 6.8
+   }
+   else {
+    rate = 8
+   }
+   
+
+   let result = document.querySelector('#result')
+   result.innerHTML = "Your interest rate is" + rate + " " + "%"
+   }
+    </script>
+</body>
+</html>
